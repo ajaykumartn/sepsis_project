@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #about-sepsis {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">SepsisX</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="/home">Home</a>
+                        <a class="nav-link" href="#labs-treatments">Lab & Treatment</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Detect Sepsis Early, Save Lives Instantly.</h1>
+                <p>Real-time, AI-powered sepsis prediction and clinical support —<br>
+                    helping hospitals take action before it’s too late.</p>
+                <div class="hero-buttons">
+                    <a href="/predict" class="btn-primary">Predict Now</a>
+                    <a href="#learn-more" class="btn-secondary" id="learnMoreButton">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features Section -->
+    <section class="features-section">
+        <h2>🔍 Key Features of SepsisX</h2>
+        <p class="section-description">SepsisX brings advanced, real-time AI technology to your hospital system, enabling early intervention and saving lives.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                ⚡ <h3>Real-time Risk Prediction</h3>
+                <p>Instant analysis of vitals, lab data, and symptoms using dynamic risk engines to give clinicians a head start.</p>
+            </div>
+            <div class="feature-card">
+                🧠 <h3>AI-Powered Engine</h3>
+                <p>Built on ANN and XGBoost models trained on diverse sepsis datasets for high prediction accuracy and explainability.</p>
+            </div>
+            <div class="feature-card">
+                📈 <h3>Sepsis Risk Score</h3>
+                <p>Visual severity bars and real-time scoring meters guide doctors with actionable insights based on patient condition.</p>
+            </div>
+            <div class="feature-card">
+                🔔 <h3>Smart Alerts & Notifications</h3>
+                <p>Automatic alerting through SMS, dashboard, or email when sepsis probability crosses warning thresholds.</p>
+            </div>
+            <div class="feature-card">
+                📋 <h3>Automated Clinical Reports</h3>
+                <p>Downloadable PDF reports containing prediction logs, patient history, treatment suggestions, and risk explanation.</p>
+            </div>
+            <div class="feature-card">
+                🌐 <h3>Multilingual Support</h3>
+                <p>Clinician interface and reports available in English, Spanish, and Japanese for wider global use.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Early Detection Matters -->
+    <section class="importance-section">
+        <h2>💡 Why Early Detection of Sepsis Matters</h2>
+        <p class="importance-quote">Every hour of delay in sepsis treatment increases the risk of death by <strong>7%</strong>.</p>
+        <div class="stats-cards">
+            <div class="stat-card">
+                🧬 <h3>49M</h3>
+                <p>New sepsis cases every year globally</p>
+            </div>
+            <div class="stat-card">
+                💀 <h3>11M</h3>
+                <p>Annual deaths due to sepsis worldwide</p>
+            </div>
+            <div class="stat-card">
+                ⏱️ <h3>3x</h3>
+                <p>Improved survival rate with early prediction</p>
+            </div>
+            <div class="stat-card">
+                🧑‍⚕️ <h3>20%</h3>
+                <p>ICU hospitalizations involve undetected sepsis</p>
+            </div>
+            <div class="stat-card">
+                💸 <h3>$24B</h3>
+                <p>Spent annually on sepsis treatment in the U.S. alone</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="labs-treatments" class="labs-treatments-section container my-5">
+        <h2 class="text-center mb-4" style="color: #00bcd4;">🧪 Sepsis Lab Tests & 💊 Treatment Protocols</h2>
+        <p class="text-center text-muted mb-5" style="max-width: 700px; margin: 0 auto;">
+          Early detection of sepsis relies on key diagnostic tests. Effective treatment involves immediate intervention to prevent organ failure and improve survival. Below are the essential labs and treatments involved in managing sepsis.
+        </p>
+      
+        <div class="row g-4">
+          <!-- Lab Tests Card -->
+          <div class="col-md-6">
+            <div class="p-4 rounded bg-dark shadow-lg h-100">
+              <h3 class="text-warning mb-3">🔬 Critical Lab Tests</h3>
+              <ul class="text-light">
+                <li><strong>Blood Cultures</strong> – Identify bloodstream infections</li>
+                <li><strong>Lactate Level</strong> – Assesses tissue oxygenation and severity</li>
+                <li><strong>Procalcitonin (PCT)</strong> – Biomarker for bacterial infection</li>
+                <li><strong>CRP (C-Reactive Protein)</strong> – General inflammatory marker</li>
+                <li><strong>CBC with Differential</strong> – Detect leukocytosis or leukopenia</li>
+                <li><strong>Metabolic Panel</strong> – Monitor kidney/liver function & electrolytes</li>
+                <li><strong>Coagulation Profile</strong> – Checks for DIC or clotting disorders</li>
+                <li><strong>Urinalysis + Urine Culture</strong> – Detect urinary source of infection</li>
+                <li><strong>Imaging Tests</strong> – X-rays, CT scans to identify infection source</li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Treatments Card -->
+          <div class="col-md-6">
+            <div class="p-4 rounded bg-dark shadow-lg h-100">
+              <h3 class="text-success mb-3">💉 Evidence-Based Treatments</h3>
+              <ul class="text-light">
+                <li><strong>Immediate Broad-Spectrum IV Antibiotics</strong> – Within 1 hour of recognition</li>
+                <li><strong>IV Fluid Resuscitation</strong> – 30 mL/kg crystalloid bolus within 3 hours</li>
+                <li><strong>Vasopressors (e.g., Norepinephrine)</strong> – For MAP &gt; 65 mmHg support</li>
+                <li><strong>Oxygen Therapy / Ventilation</strong> – For hypoxia or respiratory distress</li>
+                <li><strong>Source Control</strong> – Drain abscesses, remove infected devices, surgery</li>
+                <li><strong>Corticosteroids</strong> – In refractory shock if fluids/vasopressors insufficient</li>
+                <li><strong>Renal Replacement Therapy</strong> – Dialysis if kidney function deteriorates</li>
+                <li><strong>Continuous Monitoring</strong> – Vitals, urine output, lab trends</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>SepsisX © 2025</h3>
+            </div>
+        </div>
+    </footer>  
+</body>
+</html>

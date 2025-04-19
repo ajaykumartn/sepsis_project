@@ -1,0 +1,526 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1f1f1f;  /* Light black background */
+    color: #333131;             /* Light text */
+    margin: 0;
+    animation: fadeIn 1.2s ease-in;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.navbar-nav .nav-link {
+    color: #cccccc;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00bcd4;
+}
+
+/* Center form/home containers */
+.form-container,
+.home-container {
+    background-color: #2a2a2a;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    margin: 100px auto;
+    animation: slideUp 0.8s ease;
+    text-align: center;
+}
+
+/* Headings */
+h2, h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input and button styles */
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00bcd4;
+}
+
+button {
+    background-color: #00bcd4;
+    color: #1f1f1f;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0097a7;
+    transform: scale(1.02);
+}
+
+/* Links */
+a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4dd0e1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-image: url('../static/images/sepsis-ai-bg.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    margin-bottom: 25px;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-decoration: none;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00bcd4;
+    color: #1f1f1f;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+}
+
+.btn-secondary:hover {
+    background-color: #00bcd4;
+    color: #1f1f1f;
+}
+
+/* Trust Badges */
+.trust-badges img {
+    height: 40px;
+    margin: 0 10px;
+    filter: brightness(95%);
+    opacity: 0.8;
+    transition: transform 0.2s ease;
+}
+
+.trust-badges img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+
+/* Key Features */
+.features-section {
+    padding: 60px 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #00bcd4;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card h3 {
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.feature-card p {
+    color: #cfcfcf;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 188, 212, 0.25);
+}
+
+/* Why Early Detection Matters */
+.importance-section {
+    padding: 60px 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.importance-section h2 {
+    font-size: 2rem;
+    color: #ff5252;
+    margin-bottom: 20px;
+}
+
+.importance-quote {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.stats-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-card {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(255, 82, 82, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    color: #ff5252;
+    margin: 10px 0;
+}
+
+.stat-card p {
+    color: #cfcfcf;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 82, 82, 0.25);
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    padding: 20px 0;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-left p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .footer-left {
+        text-align: center;
+    }
+
+    .footer-left h3 {
+        font-size: 20px;
+    }
+
+    .footer-left p {
+        font-size: 12px;
+    }
+}
+
+.about-sepsis {
+    background-color: white;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.about-sepsis h1 {
+    color: #333;
+}
+
+.about-sepsis h2 {
+    color: #444;
+    margin-top: 20px;
+}
+
+.about-sepsis p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-sepsis ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.about-sepsis ul li {
+    font-size: 16px;
+}
+
+/* Section Styling */
+.sepsis-form-section {
+    background-color: #121212; /* Light Black Background */
+    color: #fff;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Layout: Left and Right Sections */
+.sepsis-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Left Side */
+.left-side {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Right Side */
+.right-side {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Form Group Styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+/* Input Styling */
+.sepsis-form input {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.sepsis-form input:focus {
+    transform: scale(1.05);
+    border: 2px solid #0df;
+}
+
+/* Full-width for Insurance & Submit */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Button Styling */
+.sepsis-form button {
+    padding: 0.8rem 2rem;
+    background-color: #0df;
+    color: #000;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sepsis-form button:hover {
+    background-color: #0aa;
+}
+
+/* Prediction Box */
+.prediction-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #222;
+    border-left: 5px solid #0df;
+    color: #0df;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.5rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.labs-treatments-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    color: #dddddd;
+  }
+  
+  .labs-treatments-section h3 {
+    font-size: 1.4rem;
+    border-bottom: 2px solid #00bcd4;
+    padding-bottom: 8px;
+  }
+  
+  .bg-dark {
+    background-color: #1f1f1f !important;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.15) !important;
+  }
+  
+  .text-light {
+    color: #f0f0f0 !important;
+  }
+  
+  .text-muted {
+    color: #b0b0b0 !important;
+  }
+  
